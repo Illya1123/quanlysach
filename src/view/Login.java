@@ -7,7 +7,8 @@ package view;
 import com.sun.jdi.connect.spi.Connection;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.mysql.cj.protocol.Resultset;
-
+import controller.BCrypt;
+import dao.AccountDAO;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.logging.Level;
@@ -21,7 +22,7 @@ import model.Account;
  *
  * @author taki
  */
-public class LoginForm extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginForm
@@ -29,7 +30,7 @@ public class LoginForm extends javax.swing.JFrame {
     Connection con = null;
     Resultset rs = null;
     Color panDefualt, panEnter, panClick;
-    public LoginForm() {
+    public Login() {
         initComponents();
         setLocationRelativeTo(null);
         UIManager.put("Button.focus", Color.white);
@@ -424,9 +425,9 @@ public class LoginForm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws UnsupportedLookAndFeelException {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        UIManager.setLookAndFeel(new FlatLightLaf());//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
@@ -451,9 +452,60 @@ public class LoginForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginForm().setVisible(true);
+                new Login().setVisible(true);
             }
         });
+    }
+    
+    public void checkLogin() {
+        String usercheck = loginUser.getText();
+        String passwordcheck = passwordUser.getText();
+        if (usercheck.equals("") || passwordcheck.equals("")) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ !", "Cảnh báo !", JOptionPane.WARNING_MESSAGE);
+        } else {
+            try {                
+                Account acc = AccountDAO.getInstance().selectById(usercheck);                
+                if (acc == null) {
+                    JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại trên hệ thống !", "Cảnh báo !", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    if (BCrypt.checkpw(passwordcheck, acc.getPassword())) {
+                        if (acc.getStatus() == 1) {
+                            try {
+                                JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+                                this.dispose();
+                                String role = acc.getRole();
+                                if (role.equals("Admin")) {
+                                    Admin ad = new Admin(acc);
+                                    ad.setVisible(true);
+//                                    ad.setCurrentAcc(acc);
+                                    ad.setName(acc.getFullName());
+                                } else if (role.equals("Quản lý kho")) {
+                                    QuanLiKho ql = new QuanLiKho();
+                                    ql.setVisible(true);
+                                    ql.setCurrentAcc(acc);
+                                    ql.setName(acc.getFullName());
+                                } else if (role.equals("Nhân viên nhập")) {
+                                    NhapKho ql = new NhapKho(acc);
+                                    ql.setVisible(true);
+                                    ql.setName(acc.getFullName());
+                                } else if (role.equals("Nhân viên xuất")) {
+                                    XuatKho ql = new XuatKho(acc);
+                                    ql.setVisible(true);
+                                    ql.setName(acc.getFullName());
+                                }
+                            } catch (UnsupportedLookAndFeelException ex) {
+                                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Tài khoản của bạn đã bị khóa !", "Cảnh báo !", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Sai mật khẩu !", "Cảnh báo !", JOptionPane.WARNING_MESSAGE);
+                    }
+                }
+            } catch (Exception e) {
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
