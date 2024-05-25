@@ -39,6 +39,7 @@ public class UpdateProduct extends javax.swing.JDialog {
         txtNgayPhatHanh.setText(a.getReleaseDate());
         txtKichThuoc.setText(a.getSize());
         txtSoTrang.setText(String.valueOf(a.getPageCount()));
+        txtMoTa.setText(a.getDescription());
     }
     
     private UpdateProduct(JFrame jFrame, boolean b) {
@@ -71,14 +72,12 @@ public class UpdateProduct extends javax.swing.JDialog {
         txtKichThuoc = new javax.swing.JTextField();
         btnAddProduct = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        pc = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        txtMoTa = new javax.swing.JTextField();
         txtSoLuong = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtSoTrang = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtMoTa = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -160,44 +159,6 @@ public class UpdateProduct extends javax.swing.JDialog {
             }
         });
 
-        pc.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel18.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-        jLabel18.setText("Mô tả");
-
-        txtMoTa.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
-
-        javax.swing.GroupLayout pcLayout = new javax.swing.GroupLayout(pc);
-        pc.setLayout(pcLayout);
-        pcLayout.setHorizontalGroup(
-            pcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pcLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(pcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-        pcLayout.setVerticalGroup(
-            pcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pcLayout.createSequentialGroup()
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
         txtSoLuong.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
@@ -207,6 +168,12 @@ public class UpdateProduct extends javax.swing.JDialog {
 
         jLabel17.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
         jLabel17.setText("Số Trang");
+
+        jLabel19.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        jLabel19.setText("Mô tả");
+
+        txtMoTa.setFont(new java.awt.Font("SF Pro Display", 0, 16)); // NOI18N
+        txtMoTa.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -245,17 +212,13 @@ public class UpdateProduct extends javax.swing.JDialog {
                             .addComponent(txtTenTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(43, 43, 43))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSoTrang, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(101, 101, 101))))
+                    .addComponent(txtSoTrang, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(101, 101, 101))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(242, 242, 242)
                 .addComponent(btnAddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,9 +245,6 @@ public class UpdateProduct extends javax.swing.JDialog {
                         .addComponent(txtSoTrang, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -314,12 +274,16 @@ public class UpdateProduct extends javax.swing.JDialog {
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtKichThuoc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))))
+                                .addComponent(txtKichThuoc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 880, 400));
@@ -377,20 +341,22 @@ public class UpdateProduct extends javax.swing.JDialog {
         String nhaXuatBan = txtNhaXuatBan.getText();
         String ngayPhatHanh = txtNgayPhatHanh.getText();
         String kichThuoc = txtKichThuoc.getText();
+        int soTrang = Integer.parseInt(txtSoTrang.getText());
+        String moTa = txtMoTa.getText();
     
         if (maSach.equals("") || tenSach.equals("") || tacGia.equals("") || nhaXuatBan.equals("") || ngayPhatHanh.equals("") || kichThuoc.equals("")) {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin !");
             return; // Dừng thực thi khi thiếu thông tin
         } else {
             int maSachInt = Integer.parseInt(maSach);
-            Sach sach = new Sach(maSachInt, "", tenSach, tacGia, nhaXuatBan, ngayPhatHanh, "", 0, "", donGia, 0, 0, soLuong);
+            Sach sach = new Sach(maSachInt, "", tenSach, tacGia, nhaXuatBan, ngayPhatHanh, kichThuoc, soTrang, moTa, donGia, 0, 0, soLuong);
             try {
-                SachDAO.getInstance().insert(sach);
+                SachDAO.getInstance().update(sach);
                 this.dispose();
-                JOptionPane.showMessageDialog(this, "Thêm sách thành công !");
+                JOptionPane.showMessageDialog(this, "Thao tác sửa thông tin sách thành công !");
                 owner.loadDataToTable();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Thêm sách thất bại !");
+                JOptionPane.showMessageDialog(this, "Thao tác sửa thông tin sách thất bại !");
             }
         }
     }//GEN-LAST:event_btnAddProductActionPerformed
@@ -448,7 +414,7 @@ public class UpdateProduct extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -458,8 +424,6 @@ public class UpdateProduct extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel pc;
     private javax.swing.JTextField txtDonGia;
     private javax.swing.JTextField txtKichThuoc;
     private javax.swing.JTextField txtMaSach;

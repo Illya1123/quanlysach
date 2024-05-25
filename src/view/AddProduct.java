@@ -73,7 +73,6 @@ public class AddProduct extends javax.swing.JDialog {
 
         jLabel2.setText("Mã sách");
 
-        txtMaSach.setEditable(false);
         txtMaSach.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setText("Tên sách");
@@ -284,7 +283,7 @@ public class AddProduct extends javax.swing.JDialog {
         }
 
     // Tạo đối tượng sách từ thông tin nhập vào
-        Sach sach = new Sach(maSach, null, tenSach, tacGia, nhaXuatBan, ngayPhatHanh, kichThuoc, soTrang, moTa, donGia, 0, 0, 0);
+        Sach sach = new Sach(maSach, "", tenSach, tacGia, nhaXuatBan, ngayPhatHanh, kichThuoc, soTrang, moTa, donGia, 0, 0, 0);
 
     // Thực hiện việc thêm sách vào cơ sở dữ liệu
         SachDAO sachDAO = SachDAO.getInstance();
