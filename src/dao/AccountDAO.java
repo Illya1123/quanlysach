@@ -35,13 +35,10 @@ public class AccountDAO implements DAOInterface<Account> {
             pst.setString(4, t.getRole());
             pst.setInt(5, t.getStatus());
             pst.setString(6, t.getEmail());
-            //Buoc 4 thuc thi cau lenh sql
+            
             ketQua = pst.executeUpdate();
-            //Buoc 5 Xu ly
-            //Buoc 6 ngat ket noi den voi co so du lieu
             JDBCUtils.closeConnection(con);
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
         return ketQua;
@@ -83,7 +80,6 @@ public class AccountDAO implements DAOInterface<Account> {
             JDBCUtils.closeConnection(con);
 
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
         return ketQua;
@@ -109,7 +105,6 @@ public class AccountDAO implements DAOInterface<Account> {
                 ketQua.add(acc);
             }
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
         return ketQua;
@@ -134,8 +129,7 @@ public class AccountDAO implements DAOInterface<Account> {
                 acc = new Account(fullName, userName, password, role, status,email);
             }
             JDBCUtils.closeConnection(con);
-        } catch (Exception e) {
-            // TODO: handle exception           
+        } catch (Exception e) {          
         }
         return acc;
     }
