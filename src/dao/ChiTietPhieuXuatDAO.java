@@ -15,17 +15,18 @@ import model.Phieu;
  *
  * @author taki
  */
-public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
-    public static ChiTietPhieuNhapDAO getInstance() {
-        return new ChiTietPhieuNhapDAO();
+public class ChiTietPhieuXuatDAO implements DAOInterface<ChiTietPhieu> {
+    
+    public static ChiTietPhieuXuatDAO getInstance() {
+        return new ChiTietPhieuXuatDAO();
     }
-
+    
     @Override
     public int insert(ChiTietPhieu t) {
         int ketQua = 0;
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "INSERT INTO ChiTietPhieuNhap (maPhieu, id, soLuong, donGia) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO ChiTietPhieuXuat (maPhieu, id, soLuong, donGia) VALUES (?,?,?,?)";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, t.getMaPhieu());
             pst.setString(2, t.getId());
@@ -45,7 +46,7 @@ public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
         int ketQua = 0;
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "UPDATE ChiTietPhieuNhap SET maPhieu=?, id=?, soLuong=?, donGia = ?  WHERE maPhieu=? AND id=?";
+            String sql = "UPDATE ChiTietPhieuXuat SET maPhieu=?, id=?, soLuong=?, donGia = ?  WHERE maPhieu=? AND id=?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, t.getMaPhieu());
             pst.setString(2, t.getId());
@@ -67,7 +68,7 @@ public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
         int ketQua = 0;
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "DELETE FROM ChiTietPhieuNhap WHERE maPhieu=?";
+            String sql = "DELETE FROM ChiTietPhieuXuat WHERE maPhieu=?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, t.getMaPhieu());
             ketQua = pst.executeUpdate();
@@ -83,7 +84,7 @@ public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
         ArrayList<ChiTietPhieu> ketQua = new ArrayList<ChiTietPhieu>();
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "SELECT * FROM ChiTietPhieuNhap WHERE maPhieu=?";
+            String sql = "SELECT * FROM ChiTietPhieuXuat WHERE maPhieu=?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, t);
             ResultSet rs = pst.executeQuery();
@@ -108,7 +109,7 @@ public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
         ArrayList<ChiTietPhieu> ketQua = new ArrayList<ChiTietPhieu>();
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "SELECT * FROM ChiTietPhieuNhap";
+            String sql = "SELECT * FROM ChiTietPhieuXuat";
             PreparedStatement pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
@@ -131,13 +132,13 @@ public class ChiTietPhieuNhapDAO implements DAOInterface<ChiTietPhieu> {
         ChiTietPhieu ketQua = null;
         try {
             Connection con = JDBCUtils.getConnection();
-            String sql = "SELECT * FROM ChiTietPhieuNhap WHERE maPhieu=?";
+            String sql = "SELECT * FROM ChiTietPhieuXuat WHERE maPhieu=?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, t);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 String maPhieu = rs.getString("maPhieu");
-                String maSach = rs.getString("id");
+                String maSach = rs.getString("maSach");
                 int soLuong = rs.getInt("soLuong");
                 double donGia = rs.getDouble("donGia");
                 ketQua = new ChiTietPhieu(maPhieu, maSach, soLuong, donGia);

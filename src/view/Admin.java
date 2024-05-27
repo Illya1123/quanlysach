@@ -43,7 +43,6 @@ public class Admin extends javax.swing.JFrame {
         this.currentAcc = t;
         ProductForm pf = new ProductForm();
         MainContent.add(pf).setVisible(true);
-//        pf.checkRole(currentAcc);
         DefaultColor = new Color(102, 153, 255);
         ClickedColor = new Color(26, 188, 156);
         NavbarMenu.setBackground(DefaultColor);
@@ -52,9 +51,7 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
     }
 
     /**
@@ -81,12 +78,8 @@ public class Admin extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         PhieuXuat = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        TonKho = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         TaiKhoan1 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        ThongKe = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         Account = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         MainContent = new javax.swing.JPanel();
@@ -165,7 +158,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        NavbarMenu.add(NhapHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 240, -1));
+        NavbarMenu.add(NhapHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 240, -1));
 
         PhieuNhap.setBackground(new java.awt.Color(102, 153, 255));
         PhieuNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -200,7 +193,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        NavbarMenu.add(PhieuNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 40));
+        NavbarMenu.add(PhieuNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 240, 40));
 
         XuatHang.setBackground(new java.awt.Color(102, 153, 255));
         XuatHang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -235,7 +228,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        NavbarMenu.add(XuatHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 240, 40));
+        NavbarMenu.add(XuatHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 40));
 
         DangXuat.setBackground(new java.awt.Color(102, 153, 255));
         DangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -318,42 +311,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        NavbarMenu.add(PhieuXuat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 240, 40));
-
-        TonKho.setBackground(new java.awt.Color(102, 153, 255));
-        TonKho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TonKho.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TonKhoMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                TonKhoMousePressed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-warehouse-25.png"))); // NOI18N
-        jLabel10.setText("TỒN KHO");
-
-        javax.swing.GroupLayout TonKhoLayout = new javax.swing.GroupLayout(TonKho);
-        TonKho.setLayout(TonKhoLayout);
-        TonKhoLayout.setHorizontalGroup(
-            TonKhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TonKhoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        TonKhoLayout.setVerticalGroup(
-            TonKhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TonKhoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        NavbarMenu.add(TonKho, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 240, -1));
+        NavbarMenu.add(PhieuXuat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 240, 40));
 
         TaiKhoan1.setBackground(new java.awt.Color(102, 153, 255));
         TaiKhoan1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -388,43 +346,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        NavbarMenu.add(TaiKhoan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 240, -1));
-
-        ThongKe.setBackground(new java.awt.Color(102, 153, 255));
-        ThongKe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ThongKeMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ThongKeMousePressed(evt);
-            }
-        });
-
-        jLabel13.setBackground(new java.awt.Color(102, 153, 255));
-        jLabel13.setFont(new java.awt.Font("SF Pro Display", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/statisticals.png"))); // NOI18N
-        jLabel13.setText("THỐNG KÊ");
-
-        javax.swing.GroupLayout ThongKeLayout = new javax.swing.GroupLayout(ThongKe);
-        ThongKe.setLayout(ThongKeLayout);
-        ThongKeLayout.setHorizontalGroup(
-            ThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongKeLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel13)
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
-        ThongKeLayout.setVerticalGroup(
-            ThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongKeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        NavbarMenu.add(ThongKe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 240, -1));
+        NavbarMenu.add(TaiKhoan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 240, -1));
 
         Account.setBackground(new java.awt.Color(102, 153, 255));
         Account.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -508,9 +430,7 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
         MainContent.removeAll();
         ProductForm p = new ProductForm();
         MainContent.add(p).setVisible(true);
@@ -531,9 +451,7 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(ClickedColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_NhapHangMousePressed
 
     private void PhieuNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhieuNhapMouseClicked
@@ -550,9 +468,7 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_PhieuNhapMousePressed
 
     private void XuatHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XuatHangMouseClicked
@@ -570,9 +486,7 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(ClickedColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_XuatHangMousePressed
 
     private void DangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DangXuatMouseClicked
@@ -609,29 +523,8 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(ClickedColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_PhieuXuatMousePressed
-
-    private void TonKhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TonKhoMouseClicked
-        // TODO add your handling code here:
-        TonKhoForm px = new TonKhoForm();
-        MainContent.removeAll();
-        MainContent.add(px).setVisible(true);
-    }//GEN-LAST:event_TonKhoMouseClicked
-
-    private void TonKhoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TonKhoMousePressed
-        // TODO add your handling code here:
-        SanPham.setBackground(DefaultColor);
-        PhieuNhap.setBackground(DefaultColor);
-        NhapHang.setBackground(DefaultColor);
-        XuatHang.setBackground(DefaultColor);
-        PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(ClickedColor);
-        TaiKhoan1.setBackground(DefaultColor);
-        ThongKe.setBackground(DefaultColor);
-    }//GEN-LAST:event_TonKhoMousePressed
 
     private void TaiKhoan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TaiKhoan1MouseClicked
         // TODO add your handling code here:
@@ -647,29 +540,8 @@ public class Admin extends javax.swing.JFrame {
         NhapHang.setBackground(DefaultColor);
         XuatHang.setBackground(DefaultColor);
         PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
         TaiKhoan1.setBackground(ClickedColor);
-        ThongKe.setBackground(DefaultColor);
     }//GEN-LAST:event_TaiKhoan1MousePressed
-
-    private void ThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThongKeMouseClicked
-        // TODO add your handling code here:
-        ThongKeForm tk = new ThongKeForm();
-        MainContent.removeAll();
-        MainContent.add(tk).setVisible(true);
-    }//GEN-LAST:event_ThongKeMouseClicked
-
-    private void ThongKeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThongKeMousePressed
-        // TODO add your handling code here:
-        ThongKe.setBackground(ClickedColor);
-        SanPham.setBackground(DefaultColor);
-        PhieuNhap.setBackground(DefaultColor);
-        NhapHang.setBackground(DefaultColor);
-        XuatHang.setBackground(DefaultColor);
-        PhieuXuat.setBackground(DefaultColor);
-        TonKho.setBackground(DefaultColor);
-        TaiKhoan1.setBackground(DefaultColor);
-    }//GEN-LAST:event_ThongKeMousePressed
 
     private void AccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AccountMouseClicked
         // TODO add your handling code here:
@@ -707,13 +579,9 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel PhieuXuat;
     private javax.swing.JPanel SanPham;
     private javax.swing.JPanel TaiKhoan1;
-    private javax.swing.JPanel ThongKe;
-    private javax.swing.JPanel TonKho;
     private javax.swing.JPanel XuatHang;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
