@@ -87,7 +87,7 @@ public class AddAccount extends javax.swing.JDialog {
         jLabel5.setText("Vai trò");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 90, -1));
 
-        vaitro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quản lý kho", "Nhân viên nhập", "Nhân viên xuất" }));
+        vaitro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên nhập", "Nhân viên xuất" }));
         vaitro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(vaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 298, 38));
 
