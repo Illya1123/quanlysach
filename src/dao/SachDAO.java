@@ -159,4 +159,21 @@ public class SachDAO implements DAOInterface<Sach> {
         }
         return sach;
     }
+    
+    public int updateSoLuong(String id, int soluong) {
+    int ketQua = 0;
+    try {
+        Connection con = JDBCUtils.getConnection();
+        String sql = "UPDATE Sach SET stock_quantity=? WHERE id=?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setInt(1, soluong);
+        pst.setString(2, id);
+        ketQua = pst.executeUpdate();
+        JDBCUtils.closeConnection(con);
+    } catch (SQLException ex) {
+        Logger.getLogger(SachDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return ketQua;
+}
+
 }
