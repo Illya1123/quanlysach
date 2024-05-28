@@ -44,7 +44,7 @@ public class Admin extends javax.swing.JFrame {
         ProductForm pf = new ProductForm();
         MainContent.add(pf).setVisible(true);
         DefaultColor = new Color(102, 153, 255);
-        ClickedColor = new Color(26, 188, 156);
+        ClickedColor = new Color(187, 222, 251);
         NavbarMenu.setBackground(DefaultColor);
         SanPham.setBackground(ClickedColor);
         PhieuNhap.setBackground(DefaultColor);

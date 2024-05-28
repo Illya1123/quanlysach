@@ -46,7 +46,7 @@ public class XuatKho extends javax.swing.JFrame {
         xh.setNguoiTao(t.getUser());
         MainContent.add(xh).setVisible(true);
         DefaultColor = new Color(102, 153, 255);
-        ClickedColor = new Color(26, 188, 156);
+        ClickedColor = new Color(187, 222, 251);
         NavbarMenu.setBackground(DefaultColor);
         XuatHang.setBackground(ClickedColor);
         PhieuXuat.setBackground(DefaultColor);
